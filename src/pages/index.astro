@@ -1,38 +1,19 @@
 ---
 // Component Imports
-import { Button } from '@nextui-org/react';
-import Counter from '../components/Counter';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Button } from "@nextui-org/react";
+import Counter from "../components/Counter";
 const someProps = {
-	count: 0,
+  count: 0,
 };
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-				margin: 0;
-			}
-			body {
-				padding: 2rem;
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<Counter {...someProps} client:visible>
-				<h1>Hello, React!</h1>
-			</Counter>
-			<Button color="primary" client:visible>My button</Button>
-		</main>
-	</body>
-</html>
+<BaseLayout title="Home Page">
+  <Counter {...someProps} client:visible>
+    <h1>Hello, React!</h1>
+  </Counter>
+  <Button color="primary" client:visible>ปุ่มข่อย</Button>
+</BaseLayout>

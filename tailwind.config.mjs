@@ -1,4 +1,5 @@
-const { nextui } = require("@nextui-org/react");
+import { nextui } from '@nextui-org/react';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -9,10 +10,14 @@ export default {
   ],
   theme: {
     extend: {
-		colors: {
-			primary: '#9E13A2'
-		}
-	},
+      colors: {
+        primary: "#9E13A2",
+      },
+
+      fontFamily: {
+        sans: ["Prompt", ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   plugins: [nextui()],
 };
