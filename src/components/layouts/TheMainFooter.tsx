@@ -1,4 +1,4 @@
-import { Divider, Image, Link } from "@nextui-org/react";
+import { Divider, Link } from "@nextui-org/react";
 import Logo from "../../assets/images/logo.svg";
 
 const TheMainFooter = () => {
