@@ -1,10 +1,12 @@
 ---
 import "@fontsource/prompt";
+import TheMainHeader from "../components/layouts/TheMainHeader";
+import TheMainFooter from "../components/layouts/TheMainFooter";
 // 1. The frontmatter prop gives access to frontmatter and other data
 const { title } = Astro.props;
 ---
 
-<html>
+<html class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -14,6 +16,10 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <TheMainHeader client:visible />
+    <main class="h-[calc(100vh-64px)]">
+      <slot />
+    </main>
+    <TheMainFooter />
   </body>
 </html>
